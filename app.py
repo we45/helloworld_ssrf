@@ -12,7 +12,8 @@ app = Flask(__name__, template_folder='templates')
 @app.route('/',methods = ['GET'])
 def home():
     if request.method == 'GET':
-        data = "Try SSRF"
+        data = {}
+        data['intro'] = "Try SSRF"
         return render_template('home.html',data=data)
     else:
         return 'Page Not Found'
